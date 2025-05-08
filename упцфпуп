@@ -1,0 +1,20 @@
+import random
+
+person = open("character.txt", "r")
+persons = person.read() 
+print(persons)
+person.close()
+
+status = ["живой", "мертв"]
+personlive2 = []
+
+
+for p in persons:
+    personlive2.append(f"{p} – {random.choice(status)}")
+
+print(personlive2)
+
+outputs = open("output.txt", "a+")
+for line in personlive2:
+    
+outputs.close()
