@@ -1,0 +1,20 @@
+import random
+
+person = open("character.txt", "r", encoding="utf-8")
+persons = person.read().splitlines()  # разбиваем построчно
+print(persons)
+person.close()
+
+status = ["живой", "мертв"]
+personlive2 = []
+
+# Присваиваем статус каждому персонажу
+for p in persons:
+    personlive2.append(f"{p} – {random.choice(status)}")
+
+print(personlive2)
+
+outputs = open("output.txt", "a+", encoding="utf-8")
+for line in personlive2:
+    outputs.write(line + "\n")
+outputs.close()
